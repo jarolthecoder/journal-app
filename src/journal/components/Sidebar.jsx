@@ -4,16 +4,13 @@ import { Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIco
 
 export const Sidebar = ({ drawerWidth }) => {
   return (
-    <Box
-      component="nav"
-      sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-    >
+    <Box component="nav" sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}>
       <Drawer 
         variant="permanent" // temporary
         open
         sx={{
           display: { xs: 'block' },
-          '& .MuiDrawer-paper': {boxSizing: 'border-box', width: { drawerWidth }}
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth }
         }}
       >
         <Toolbar>

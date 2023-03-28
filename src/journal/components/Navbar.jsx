@@ -12,11 +12,7 @@ export const Navbar = ({ drawerWidth }) => {
       }}
     >
       <Toolbar>
-        <IconButton
-          color="inherit"
-          edge="start"
-          sx={{ mr: 2, display: {sm: 'none'} }}
-        >
+        <IconButton color="inherit" edge="start" sx={{ mr: 2, display: {sm: 'none'} }}>
           <MenuOutlined />
         </IconButton>
         <Grid container direction="row" justifyContent="space-between" alignItems="center">
