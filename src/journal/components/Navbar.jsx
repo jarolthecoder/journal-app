@@ -17,8 +17,8 @@ export const Navbar = ({ drawerWidth }) => {
         </IconButton>
         <Grid container direction="row" justifyContent="space-between" alignItems="center">
           <Typography variant="h6" noWrap component="div">JournalApp</Typography>
-          <IconButton color="inherit">
-            <LogoutOutlined />
+          <IconButton>
+            <LogoutOutlined/>
           </IconButton>
         </Grid>
       </Toolbar>
