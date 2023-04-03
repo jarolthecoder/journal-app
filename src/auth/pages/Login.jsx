@@ -3,13 +3,13 @@ import { Google } from "@mui/icons-material"
 import { Button, Grid, Link, TextField, Typography } from "@mui/material"
 import { AuthLayout } from '../layout/AuthLayout'
 import { useForm } from '../../hooks'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { checkingAuthentication, startGoogleSignIn } from '../../store/auth/thunks'
 
 
 export const Login = () => {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const { email, password, onInputChange } = useForm({
     email: 'jarol@google.com',
@@ -18,13 +18,13 @@ export const Login = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    console.log({email, password})
-    dispatch(checkingAuthentication())
+    console.log({email, password});
+    dispatch(checkingAuthentication());
   }
 
   const onGoogleSignIn = () => {
-    console.log('google sign in')
-    dispatch(startGoogleSignIn())
+    console.log('google sign in');
+    dispatch(startGoogleSignIn());
   }
 
   return (
