@@ -13,11 +13,17 @@ export const signInWithGoogle = async() => {
     return {
       ok: true,
       // User Info
-      
+      displayName, email, photoURL, uid
     }
 
   } catch (error) {
-    console.log(error)
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+    return {
+      ok: false,
+      errorMessage
+    }
   }
 
 }
