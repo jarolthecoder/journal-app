@@ -12,11 +12,15 @@ const formData = {
 
 export const Register = () => {
 
-  const {displayName, email, password, onInputChange } = useForm(formData);
+  const {displayName, email, password, onInputChange, formState } = useForm(formData);
+
+  const onSubmit = () => {
+    console.log(formState)
+  }
 
   return (
     <AuthLayout title="Register">
-      <form>
+      <form onSubmit={onSubmit}>
         <Grid container>
           <Grid item xs={ 12 } sx={{ mt: 2 }}>
             <TextField
