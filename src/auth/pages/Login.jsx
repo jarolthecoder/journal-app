@@ -59,12 +59,18 @@ export const Login = () => {
           </Grid>
           <Grid container spacing={ 2 } sx={{ my: 2 }}>
             <Grid item xs={ 12 } sm={ 6 }>
-              <Button type="submit" variant="contained" fullWidth>
+              <Button 
+                disabled={ isAuthenticated }
+                type="submit" 
+                variant="contained" 
+                fullWidth
+              >
                 Login
               </Button>
             </Grid>
             <Grid item xs={ 12 } sm={ 6 }>
               <Button 
+                disabled={ isAuthenticated }
                 variant="contained" 
                 onClick={ onGoogleSignIn }
                 fullWidth
