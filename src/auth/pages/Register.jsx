@@ -28,6 +28,9 @@ export const Register = () => {
               label="Full Name"
               type="text"
               placeholder="Enter full name"
+              name="displayName"
+              value={ displayName }
+              onChange={ onInputChange }
               fullWidth
             />
           </Grid>
@@ -36,6 +39,9 @@ export const Register = () => {
               label="Email"
               type="email"
               placeholder="Email@example.com"
+              name="email"
+              value={ email }
+              onChange={ onInputChange }
               fullWidth
             />
           </Grid>
@@ -44,6 +50,9 @@ export const Register = () => {
               label="Password"
               type="password"
               placeholder="Password"
+              name="password"
+              value={ password }
+              onChange={ onInputChange }
               fullWidth
             />
           </Grid>
