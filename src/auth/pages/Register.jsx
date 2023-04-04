@@ -14,7 +14,8 @@ export const Register = () => {
 
   const {displayName, email, password, onInputChange, formState } = useForm(formData);
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault()
     console.log(formState)
   }
 
