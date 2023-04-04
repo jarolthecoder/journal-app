@@ -5,6 +5,12 @@ import { AuthLayout } from '../layout/AuthLayout'
 
 
 export const Register = () => {
+
+  const { email, password, onInputChange } = useForm({
+    email: 'jarol@google.com',
+    password: '12345'
+  });
+
   return (
     <AuthLayout title="Register">
       <form>
