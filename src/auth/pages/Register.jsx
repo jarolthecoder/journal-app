@@ -4,13 +4,15 @@ import { Button, Grid, Link, TextField, Typography, useFormControl } from "@mui/
 import { AuthLayout } from '../layout/AuthLayout'
 import { useForm } from '../../hooks'
 
+const formData = {
+  email: 'jarol@google.com',
+  password: '12345',
+  displayName: 'Jarol Riera'
+}
 
 export const Register = () => {
 
-  const { email, password, onInputChange } = useForm({
-    email: 'jarol@google.com',
-    password: '12345'
-  });
+  const {displayName, email, password, onInputChange } = useForm(formData);
 
   return (
     <AuthLayout title="Register">
