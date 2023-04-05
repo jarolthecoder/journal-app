@@ -29,7 +29,6 @@ export const Register = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true)
-    console.log(formState)
   }
 
   return (
