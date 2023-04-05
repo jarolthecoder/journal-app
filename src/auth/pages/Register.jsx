@@ -11,7 +11,7 @@ const formData = {
 }
 
 const formValidations = {
-  email: ''
+  email: [(value) => value.includes('@'), `Email must contain '@'`],
 }
 
 export const Register = () => {
