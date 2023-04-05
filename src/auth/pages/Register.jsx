@@ -10,6 +10,10 @@ const formData = {
   displayName: 'Jarol Riera'
 }
 
+const formValidations = {
+  email: ''
+}
+
 export const Register = () => {
 
   const {displayName, email, password, onInputChange, formState } = useForm(formData);
@@ -31,6 +35,8 @@ export const Register = () => {
               name="displayName"
               value={ displayName }
               onChange={ onInputChange }
+              error={ true }
+              helperText="Name is required"        
               fullWidth
             />
           </Grid>
@@ -58,7 +64,11 @@ export const Register = () => {
           </Grid>
           <Grid container spacing={ 2 } sx={{ my: 2 }}>
             <Grid item xs={ 12 }>
-              <Button variant="contained" fullWidth>
+              <Button 
+                type="submit"
+                variant="contained" 
+                fullWidth
+              >
                 Create account
               </Button>
             </Grid>
