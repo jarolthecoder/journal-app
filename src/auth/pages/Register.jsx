@@ -30,7 +30,7 @@ export const Register = () => {
 
   return (
     <AuthLayout title="Register">
-      <form onSubmit={onSubmit}>
+      <form onSubmit={ onSubmit }>
         <Grid container>
           <Grid item xs={ 12 } sx={{ mt: 2 }}>
             <TextField
