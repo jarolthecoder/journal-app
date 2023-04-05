@@ -17,7 +17,7 @@ export const useForm = (initialForm = {}, formValidations = {}) => {
     }
 
     return true
-  }, [formState])
+  }, [formValidation])
   
 
   const onInputChange = ({ target }) => {

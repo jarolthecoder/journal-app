@@ -5,9 +5,9 @@ import { AuthLayout } from '../layout/AuthLayout'
 import { useForm } from '../../hooks'
 
 const formData = {
-  email: 'jarol@google.com',
-  password: '12345',
-  displayName: 'Jarol Riera'
+  email: '',
+  password: '',
+  displayName: 'git'
 }
 
 const formValidations = {
@@ -40,8 +40,8 @@ export const Register = () => {
               name="displayName"
               value={ displayName }
               onChange={ onInputChange }
-              error={ true }
-              helperText="Name is required"        
+              error={ !!displayNameValid }
+              helperText={ displayNameValid }       
               fullWidth
             />
           </Grid>
@@ -53,6 +53,8 @@ export const Register = () => {
               name="email"
               value={ email }
               onChange={ onInputChange }
+              error={ !!emailValid }
+              helperText={ emailValid }  
               fullWidth
             />
           </Grid>
@@ -64,6 +66,8 @@ export const Register = () => {
               name="password"
               value={ password }
               onChange={ onInputChange }
+              error={ !!passwordValid }
+              helperText={ passwordValid }  
               fullWidth
             />
           </Grid>
