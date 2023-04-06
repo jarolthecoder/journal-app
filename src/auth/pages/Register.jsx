@@ -3,7 +3,7 @@ import { Google } from "@mui/icons-material"
 import { Alert, Button, Grid, Link, TextField, Typography, useFormControl } from "@mui/material"
 import { AuthLayout } from '../layout/AuthLayout'
 import { useForm } from '../../hooks'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { startCreatingUserWithPassword } from '../../store/auth/thunks'
 
@@ -85,8 +85,14 @@ export const Register = () => {
             />
           </Grid>
           <Grid container spacing={ 2 } sx={{ my: 2 }}>
-            <Grid item xs={ 12 }>
-              <Alert />
+            <Grid 
+              item 
+              xs={ 12 }
+              display={!!errorMessage ? '' : 'none'}
+            >
+              <Alert severity='error'>
+                {errorMessage}
+              </Alert>
             </Grid>
             <Grid item xs={ 12 }>
               <Button 
