@@ -4,6 +4,8 @@ import { Button, Grid, Link, TextField, Typography, useFormControl } from "@mui/
 import { AuthLayout } from '../layout/AuthLayout'
 import { useForm } from '../../hooks'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { startCreatingUserWithPassword } from '../../store/auth/thunks'
 
 const formData = {
   email: '',
@@ -19,6 +21,7 @@ const formValidations = {
 
 export const Register = () => {
 
+  const dispatch = useDispatch();
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const {
@@ -28,7 +31,11 @@ export const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setFormSubmitted(true)
+    setFormSubmitted(true);
+
+    if(!isFormValid) return;
+
+    dispatch(startCreatingUserWithPassword(formState));
   }
 
   return (
