@@ -1,10 +1,10 @@
 import { Link as RouterLink } from 'react-router-dom'
 import { Google } from "@mui/icons-material"
-import { Button, Grid, Link, TextField, Typography, useFormControl } from "@mui/material"
+import { Alert, Button, Grid, Link, TextField, Typography, useFormControl } from "@mui/material"
 import { AuthLayout } from '../layout/AuthLayout'
 import { useForm } from '../../hooks'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { startCreatingUserWithPassword } from '../../store/auth/thunks'
 
 const formData = {
@@ -23,6 +23,9 @@ export const Register = () => {
 
   const dispatch = useDispatch();
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const {status, errorMessage} = useSelector(state => state.auth);
+  const isCheckingAuthentication = useMemo(() => status === 'checking', [status]);
 
   const {
     formState, displayName, email, password, onInputChange,
@@ -83,7 +86,11 @@ export const Register = () => {
           </Grid>
           <Grid container spacing={ 2 } sx={{ my: 2 }}>
             <Grid item xs={ 12 }>
+              <Alert />
+            </Grid>
+            <Grid item xs={ 12 }>
               <Button 
+                disabled={isCheckingAuthentication}
                 type="submit"
                 variant="contained" 
                 fullWidth
