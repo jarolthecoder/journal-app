@@ -1,11 +1,15 @@
 import { LogoutOutlined, MenuOutlined } from "@mui/icons-material"
 import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material"
+import { useDispatch } from "react-redux"
+import { startLogout } from "../../store/auth/thunks";
 
 
 export const Navbar = ({ drawerWidth }) => {
 
+  const dispatch = useDispatch();
+
   const onLogout = () => {
-    console.log('logout');
+    dispatch(startLogout());
   }
 
   return (
