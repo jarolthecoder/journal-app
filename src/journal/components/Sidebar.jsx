@@ -17,7 +17,7 @@ export const Sidebar = ({ drawerWidth }) => {
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth }
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{flexDirection: 'column', alignItems: 'flex-start'}}>
           <Typography variant="h6" noWrap>
             { displayName }
           </Typography>
